@@ -24,9 +24,10 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
           <ul class="nav navbar-nav">
-			<li class="active"><a href="#" title="">Active Link</a></li>
+			<li class="active"><a href="#" title="">Home</a></li>
 			<li><?=anchor('news/','News')?></li>
 			<li><?=anchor('news/create','Add News')?></li>
+			<li><?=anchor('rss/','RSS Feed')?></li>
           </ul>
         </div>
       </div>
