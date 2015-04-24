@@ -3,8 +3,10 @@ $this->load->view($this->config->item('theme').'header');
 ?>
 
 <h2><?php echo $title ?></h2>
-<?php 
 
+<!-- <input type="text" name="qryStr" /> -->
+
+<?php 
 	foreach ($rss->channel->item as $rss_item): ?>
     	
         <h3><?php echo $rss_item->title ?></h3>
@@ -14,3 +16,7 @@ $this->load->view($this->config->item('theme').'header');
         <p><a href="<?php echo $rss_item->link ?>">View article</a></p>
 
 <?php endforeach ?>
+
+<?php
+$this->load->view($this->config->item('theme').'footer');
+?>
