@@ -13,3 +13,6 @@
     <input type="submit" name="submit" value="Create news item" />
 
 </form>
+<?php
+if (isset(submit)) {header('Location: success.php');}
+?>
