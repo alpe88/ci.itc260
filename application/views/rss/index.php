@@ -4,16 +4,10 @@ $this->load->view($this->config->item('theme').'header');
 
 <h2><?php echo $title ?></h2>
 
-<!-- <input type="text" name="qryStr" /> -->
-
 <?php 
-	foreach ($rss->channel->item as $rss_item): ?>
+	foreach ($link as $rss_category): ?>
     	
-        <h3><?php echo $rss_item->title ?></h3>
-        <div class="main">
-                <?php echo $rss_item->description ?>
-        </div>
-        <p><a href="<?php echo $rss_item->link ?>">View article</a></p>
+        <h3><a href="<?php echo $rss_category['link']; ?>"><?php echo $rss_category['link'];?></a></h3>
 
 <?php endforeach ?>
 
