@@ -1,4 +1,5 @@
 <?php
+#views/rss/index.php
 $this->load->view($this->config->item('theme').'header');
 ?>
 
