@@ -1,4 +1,5 @@
 <?php
+#views/news/index.php
 $this->load->view($this->config->item('theme').'header');
 ?>
 
