@@ -1,17 +1,19 @@
 <?php
-#views/rss/index.php
-$this->load->view($this->config->item('theme').'header');
+    $this->load->view($this->config->item('theme').'header');
 ?>
 
-<h2><?php echo $title ?></h2>
-
 <?php 
-	foreach ($link as $rss_category): ?>
+
+	foreach ($rss->channel->item as $rss_item): ?>
     	
-        <h3><a href="<?php echo $rss_category['link']; ?>"><?php echo $rss_category['link'];?></a></h3>
+        <h3><?php echo $rss_item->title ?></h3>
+        <div class="main">
+                <?php echo $rss_item->description ?>
+        </div>
+        <p><a target="_blank" href="<?php echo $rss_item->link ?>">View article</a></p>
 
 <?php endforeach ?>
 
 <?php
-$this->load->view($this->config->item('theme').'footer');
+    $this->load->view($this->config->item('theme').'footer');
 ?>
