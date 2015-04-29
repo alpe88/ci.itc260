@@ -6,8 +6,8 @@ class Rss extends CI_Controller {
                 $this->load->model('rss_model');
         }
     
-        public function index(){
-                $data['rss'] = $this->rss_model->get_rss();
+        public function index($query = 'Ice+Cream'){
+                $data['rss'] = $this->rss_model->get_rss($query);
                 $data['title'] = 'RSS News Feed';
 		//assigning variables into data array. 
                 $this->load->view('templates/header', $data);
