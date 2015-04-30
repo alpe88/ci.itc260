@@ -2,10 +2,10 @@
     $this->load->view($this->config->item('theme').'header');
 ?>
 
-<?php foreach ($link as $l): ?>
+<?php foreach ($links as $l):?>
     	
 <h3>
-	<?php echo anchor('rss/' . $l['link'], $l['link']); ?>
+	<?php echo anchor('rss/view' . $l, $l, array('title' => $l));?>
 </h3>
 
 <?php endforeach ?>
