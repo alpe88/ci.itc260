@@ -28,7 +28,7 @@
  *	index() - sets up the view for a single customer
  *
  * @see Customer_model.php
- * @todo none
+ * @todo set_news();
  */
 class Customer_model extends CI_Model {
 
@@ -37,30 +37,30 @@ class Customer_model extends CI_Model {
             $this->load->database();
     }
 
-    public function get_news($slug = FALSE)
+    public function get_customers($slug = FALSE)
     {
             if ($slug === FALSE)
             {
-                    $query = $this->db->get('news');
+                    $query = $this->db->get('test_Customers');
                     return $query->result_array();
             }
-
-            $query = $this->db->get_where('news', array('slug' => $slug));
+            $query = $this->db->get_where('test_Customers', array('CustomerID' => 'CustomerID'));
             return $query->row_array();
     }
 
-    public function set_news()
+    /*public function set_news()
     {
         $this->load->helper('url');
-
-        $slug = url_title($this->input->post('title'), 'dash', TRUE);
+	 $customer_name = $this->input->post('last_name') + $this->input->post('first_name')
+        $slug = url_title($customer_name, 'dash', TRUE);
 
         $data = array(
-            'title' => $this->input->post('title'),
+            'LastName' => $this->input->post('last_name'),
+			'FirstName' => $this->input->post('first_name'),
             'slug' => $slug,
-            'text' => $this->input->post('text')
+            'email' => $this->input->post('email')
         );
 
-        return $this->db->insert('news', $data);
-    }
+        return $this->db->insert('customer', $data);
+    }*/
 }

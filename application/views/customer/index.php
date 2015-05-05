@@ -20,6 +20,22 @@
     $this->load->view($this->config->item('theme').'header');
 ?>
 
+<?php foreach ($customer as $customer_info): ?>
+
+        <div class="main">
+		
+                <?php echo '<h2>Full Name:</h2><h3>'.$customer_info['LastName'] ." ". $customer_info['FirstName'].'</h3>';
+			echo '<h2>Email:</h2> <h3>'.$customer_info['Email'].'</h3>';
+		?>
+        </div>
+        <!--<p>
+		<?php echo anchor($customer_info['slug'], 'View Article'); ?>
+	 </p>-->
+
+		
+<?php endforeach ?>
+
+
 <?php
     $this->load->view($this->config->item('theme').'footer');
 ?>
