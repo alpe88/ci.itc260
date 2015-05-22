@@ -12,7 +12,7 @@ class Navigation {
 		
 	}
 
-	function init($selected){
+	function init(){
 		$CI =& get_instance();
 		
 		$default_menu = array
@@ -84,9 +84,9 @@ class Navigation {
 	/*
 	 * load - Return HTML navigation string
 	 */
-	public function load($selected)
+	public function load($selected = null)
 	{
-		$this->init($selected);
+		$this->init();
 		$out = '<ul class="nav navbar-nav">';
 		foreach ( $this->menu as $i=>$arr )
 		{
