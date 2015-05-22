@@ -42,9 +42,12 @@ class Customer extends CI_Controller {
 	 * @return void
 	 * @todo none
 	 */
+	 
         public function __construct(){
                 parent::__construct();
                 $this->load->model('customer_model');
+		  
+		  $this->load->view('templates/header');
         }#end constructor()
 
     	/**
@@ -58,8 +61,7 @@ class Customer extends CI_Controller {
                 $data['customer'] = $this->customer_model->get_customers();
                 $data['title'] = 'List of Customers:';
 		  //assigning variables into data array.
-                $this->load->view('templates/header', $data);
                 $this->load->view('customer/index', $data);
-                $this->load->view('templates/footer', $data);
+                $this->load->view('templates/footer');
         }#end of index()  
 }#end Customer

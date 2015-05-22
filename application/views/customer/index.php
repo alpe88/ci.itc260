@@ -16,8 +16,6 @@
  * @see Customer.php
  * @todo none
  */
-
-    $this->load->view($this->config->item('theme').'header');
 ?>
 
 <?php foreach ($customer as $customer_info): ?>
@@ -34,8 +32,3 @@
 
 		
 <?php endforeach ?>
-
-
-<?php
-    $this->load->view($this->config->item('theme').'footer');
-?>

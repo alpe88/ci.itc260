@@ -4,6 +4,7 @@ class Rss extends CI_Controller {
         {
                 parent::__construct();
                 $this->load->model('rss_model');
+
         }
     
         public function index(){
@@ -12,7 +13,7 @@ class Rss extends CI_Controller {
 		//assigning variables into data array.
                 $this->load->view('templates/header', $data);
                 $this->load->view('rss/index', $data);
-                $this->load->view('templates/footer', $data);
+		  $this->load->view('templates/footer');
         }
 
 	public function view($query){
@@ -21,11 +22,11 @@ class Rss extends CI_Controller {
 		  $replace = "";
 		  $query = str_replace($search, $replace, $subject);
 		  $data['rss'] = $this->rss_model->get_rss($query);
-          $data['title'] = 'RSS'.$query.'Feed';
+          	  $data['title'] = 'RSS'.$query.'Feed';
 		  //assigning variables into data array. 
-                $this->load->view('templates/header', $data);
+		  $this->load->view('templates/header', $data);
                 $this->load->view('rss/view', $data);
-                $this->load->view('templates/footer', $data);
+		  $this->load->view('templates/footer');
 	}
     
 }

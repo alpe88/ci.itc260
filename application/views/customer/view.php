@@ -1,7 +1,3 @@
-<?php
-    $this->load->view($this->config->item('theme').'header');
-?>
-
 <?php 
 
 	foreach ($rss->channel->item as $rss_item): ?>
@@ -13,7 +9,3 @@
         <p><a target="_blank" href="<?php echo $rss_item->link ?>">View article</a></p>
 
 	<?php endforeach ?>
-
-<?php
-    $this->load->view($this->config->item('theme').'footer');
-?>

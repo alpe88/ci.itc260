@@ -1,3 +1,5 @@
-        <em>&copy; 2014</em>
+<?php
+$this->load->view($this->config->item('theme').'footer');
+?>
     </body>
 </html>
